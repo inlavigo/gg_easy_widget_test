@@ -37,20 +37,20 @@ class GgEasyWidgetTest<T extends Widget, S extends State> {
   double get height => renderBox.size.height;
 
   // ...........................................................................
-  /// The render box of the widget
-  RenderBox get renderBox => (element.renderObject as RenderBox);
-
-  // ...........................................................................
-  /// The Element of the tested widget
-  Element get element => tester.firstElement(finder);
-
-  // ...........................................................................
   /// The absolute frame of the tested widget
   Rect get absoluteFrame {
     final offset = renderBox.localToGlobal(Offset.zero);
     return Rect.fromLTWH(
         offset.dx, offset.dy, renderBox.size.width, renderBox.size.height);
   }
+
+  // ...........................................................................
+  /// The render box of the widget
+  RenderBox get renderBox => (element.renderObject as RenderBox);
+
+  // ...........................................................................
+  /// The Element of the tested widget
+  Element get element => tester.firstElement(finder);
 
   // ...........................................................................
   /// The widget instance under test
