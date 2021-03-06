@@ -62,7 +62,7 @@ class GgEasyWidgetTest<T extends Widget, S extends State> {
 
   // ...........................................................................
   /// Apply a mouse click or a touch to the widget
-  press() async {
+  Future<void> press() async {
     final gesture = await tester.press(finder);
     await tester.pumpAndSettle();
     await gesture.up();
