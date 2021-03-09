@@ -1,10 +1,10 @@
 name: gg_easy_widget_test
 description: GgEasyWidgetTest eases the tests of the widgets. It easily provides you with the following information about a widget under test.
-version: 0.0.1+2
+version: 1.0.0
 homepage: https://github.com/inlavigo/gg_easy_widget_test
 
 environment:
-  sdk: ">=2.12.0-0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
