@@ -4,6 +4,7 @@
 // Use of this source code is governed by terms that can be
 // found in the LICENSE file in the root of this repository.
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -62,8 +63,17 @@ class GgEasyWidgetTest<T extends Widget, S extends State> {
 
   // ...........................................................................
   /// Apply a mouse click or a touch to the widget
-  Future<void> press() async {
-    final gesture = await tester.press(finder);
+  Future<void> press({
+    int? pointer,
+    int buttons = kPrimaryButton,
+    bool warnIfMissed = true,
+  }) async {
+    final gesture = await tester.press(
+      finder,
+      pointer: pointer,
+      buttons: buttons,
+      warnIfMissed: warnIfMissed,
+    );
     await tester.pumpAndSettle();
     await gesture.up();
     await tester.pumpAndSettle();
