@@ -42,7 +42,11 @@ class GgEasyWidgetTest<T extends Widget, S extends State> {
   Rect get absoluteFrame {
     final offset = renderBox.localToGlobal(Offset.zero);
     return Rect.fromLTWH(
-        offset.dx, offset.dy, renderBox.size.width, renderBox.size.height);
+      offset.dx,
+      offset.dy,
+      renderBox.size.width,
+      renderBox.size.height,
+    );
   }
 
   // ...........................................................................
@@ -63,6 +67,7 @@ class GgEasyWidgetTest<T extends Widget, S extends State> {
 
   // ...........................................................................
   /// Apply a mouse click or a touch to the widget
+  /// coverage:ignore-start
   Future<void> press({
     int? pointer,
     int buttons = kPrimaryButton,
@@ -78,4 +83,6 @@ class GgEasyWidgetTest<T extends Widget, S extends State> {
     await gesture.up();
     await tester.pumpAndSettle();
   }
+
+  /// coverage:ignore-end
 }

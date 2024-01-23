@@ -8,15 +8,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gg_easy_widget_test/gg_easy_widget_test.dart';
 
-final subwidgetFrame = Rect.fromLTWH(10, 20, 30, 40);
+const subwidgetFrame = Rect.fromLTWH(10, 20, 30, 40);
 
 // #############################################################################
 
 /// This is the sample widget we will test using GgEasyWidgetTest
 class SampleWidget extends StatefulWidget {
-  SampleWidget({required Key key}) : super(key: key);
+  const SampleWidget({required Key key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _SampleWidgetState createState() => _SampleWidgetState();
 }
 
@@ -33,7 +34,7 @@ class _SampleWidgetState extends State<SampleWidget> {
 }
 
 // #############################################################################
-main() {
+void main() {
   group('GgEasyWidgetTest', () {
     // .........................................................................
     testWidgets('should provide information about an widget under test',
@@ -52,7 +53,7 @@ main() {
                 left: subwidgetFrame.left,
                 top: subwidgetFrame.top,
                 child: sampleWidget,
-              )
+              ),
             ],
           ),
         ),

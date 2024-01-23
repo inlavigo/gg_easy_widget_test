@@ -1,3 +1,10 @@
+# Change Log
+
+## 1.1.0
+
+- Update minimum SDK version
+- Fix warnings
+
 ## 1.0.1
 
 - Added additional parameters to `GgEasyWidgetTest:press` which are
